@@ -1,0 +1,23 @@
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.table-striped {
+    width: 900px;
+}
+
+.btn-primary {
+    width: 100%;
+}

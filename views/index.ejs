@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./add.ejs">
+    <!-- CSS only -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="content">
+        <H1>NHAP DANH SACH BAI BAO</H1>
+        <!-- <form action="/" method="post" enctype="multipart/form-data">
+            <div class="m-3 ">
+                <label for="" class="form-label"> STT: </label>
+                <input type="number" name="stt" placeholder="STT" class="form-control">
+            </div>
+            <div class="m-3">
+                <label for="" class="form-label">Ten bai bao: </label>
+                <input type="text" name="tenBaiBao" placeholder="Ten bai bao" class="form-control" size="300px">
+            </div>
+            <div class="m-3">
+                <label for="" class="form-label">Ten nhom tac gia: </label>
+                <input type="text" name="tenTacGia" placeholder="Ten nhom tac gia" class="form-control">
+            </div>
+            <div class="m-3">
+                <label for="" class="form-label">Chi so ISBN: </label>
+                <input type="text" name="isbn" placeholder="Chi so ISBN" class="form-control">
+            </div>
+            <div class="m-3">
+                <label for="" class="form-label">So trang: </label>
+                <input type="number" name="soTrang" placeholder="So trang" class="form-control">
+            </div>
+            <div class="m-3">
+                <label for="" class="form-label">So nam xuat ban: </label>
+                <input type="number" name="namXuatBan" placeholder="So nam xuat ban" class="form-control">
+            </div>
+            <div class="m-3">
+                <input type="submit" value="THEM" class="btn btn-primary">
+            </div>
+        </form> -->
+
+        <a href="/add">Them</a>
+        <table border="1" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ten Bai Bao</th>
+                    <th>Ten Nhom Tac Gia</th>
+                    <th>chi So ISBN</th>
+                    <th>So Trang</th>
+                    <th>So nam Xuat Ban</th>
+                    <th>Chon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0;i< Papers.length;i++){
+                    %>
+                    <tr>
+                        <td>
+                            <%=Papers[i].stt%>
+                        </td>
+                        <td>
+                            <%=Papers[i].tenBaiBao%>
+                        </td>
+                        <td>
+                            <%=Papers[i].tenTacGia%>
+                        </td>
+                        <td>
+                            <%=Papers[i].isbn%>
+                        </td>
+                        <td>
+                            <%=Papers[i].soTrang%>
+                        </td>
+                        <td>
+                            <%=Papers[i].namXuatBan%>
+                        </td>
+                        <td>
+                            <form action="/delete" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="stt" value="<%=Papers[i].stt%>" />
+                                <input type="submit" value="Xoa">
+                            </form>
+                        </td>
+
+                    </tr>
+                    <%} %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
